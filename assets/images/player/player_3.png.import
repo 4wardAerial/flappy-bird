@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c88865ax6b2nk"
-path="res://.godot/imported/pipe_start.png-4bdc61b926b74358b59923b4e1e0e5d2.ctex"
+uid="uid://dy3liqihbse7t"
+path="res://.godot/imported/player_3.png-65062c0f6e6c21b34f2e40d5a5f0c22d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/pipe_start.png"
-dest_files=["res://.godot/imported/pipe_start.png-4bdc61b926b74358b59923b4e1e0e5d2.ctex"]
+source_file="res://assets/images/player/player_3.png"
+dest_files=["res://.godot/imported/player_3.png-65062c0f6e6c21b34f2e40d5a5f0c22d.ctex"]
 
 [params]
 

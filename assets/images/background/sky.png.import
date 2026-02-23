@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://oj6cyvfsl7mq"
-path="res://.godot/imported/cloud_2.png-ba04883a4b184373007349acf4a81cfa.ctex"
+uid="uid://dy66rxgcb14fl"
+path="res://.godot/imported/sky.png-985040d1a549fde3336d0884ec7752ef.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cloud_2.png"
-dest_files=["res://.godot/imported/cloud_2.png-ba04883a4b184373007349acf4a81cfa.ctex"]
+source_file="res://assets/images/background/sky.png"
+dest_files=["res://.godot/imported/sky.png-985040d1a549fde3336d0884ec7752ef.ctex"]
 
 [params]
 

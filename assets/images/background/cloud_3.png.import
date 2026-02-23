@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bft4tsiduvrkp"
-path="res://.godot/imported/pipe_spritesheet.png-2694a834e05be0a8b39766659d88557a.ctex"
+uid="uid://bsvmwna4akqod"
+path="res://.godot/imported/cloud_3.png-96a67b7271ad4d73578ddc2bec894ff9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/pipe_spritesheet.png"
-dest_files=["res://.godot/imported/pipe_spritesheet.png-2694a834e05be0a8b39766659d88557a.ctex"]
+source_file="res://assets/images/background/cloud_3.png"
+dest_files=["res://.godot/imported/cloud_3.png-96a67b7271ad4d73578ddc2bec894ff9.ctex"]
 
 [params]
 

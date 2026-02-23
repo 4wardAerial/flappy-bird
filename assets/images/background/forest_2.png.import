@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2je8614rdmtf"
-path="res://.godot/imported/pipe_glowmask.png-ea141d403e01ec21f2843f5150778f50.ctex"
+uid="uid://8ykmq7ly1qt5"
+path="res://.godot/imported/forest_2.png-7f5239452f82e71d04d1710270506aad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/pipe_glowmask.png"
-dest_files=["res://.godot/imported/pipe_glowmask.png-ea141d403e01ec21f2843f5150778f50.ctex"]
+source_file="res://assets/images/background/forest_2.png"
+dest_files=["res://.godot/imported/forest_2.png-7f5239452f82e71d04d1710270506aad.ctex"]
 
 [params]
 

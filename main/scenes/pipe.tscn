@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://36lfnnt68lgl" path="res://main/scripts/pipe.gd" id="1_vjgfa"]
 [ext_resource type="TileSet" uid="uid://ckvxux1o3wiur" path="res://assets/tilesets/pipe_glow_tileset.tres" id="3_pefbi"]
 [ext_resource type="TileSet" uid="uid://dwgov1ih55w74" path="res://assets/tilesets/pipe_tileset.tres" id="3_vjgfa"]
-[ext_resource type="Texture2D" uid="uid://b2je8614rdmtf" path="res://assets/images/pipe_glowmask.png" id="4_24ckd"]
+[ext_resource type="Texture2D" uid="uid://b2je8614rdmtf" path="res://assets/images/pipes/pipe_glowmask.png" id="4_24ckd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_84vtl"]
 size = Vector2(128, 127.59914)

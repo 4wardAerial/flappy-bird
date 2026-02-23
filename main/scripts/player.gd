@@ -17,9 +17,9 @@ var jump_velocity : float = -300.0
 
 func _ready() -> void:
 	var textures = [
-		preload("res://assets/images/player_1.png"),
-		preload("res://assets/images/player_2.png"),
-		preload("res://assets/images/player_3.png"),
+		preload("res://assets/images/player/player_1.png"),
+		preload("res://assets/images/player/player_2.png"),
+		preload("res://assets/images/player/player_3.png"),
 	]
 	player_sprite.texture = textures[Global.current_sprite]
 	player_sprite.self_modulate = Global.player_colors[Global.current_color]
@@ -54,7 +54,7 @@ func lost_game() -> void:
  
 
 func _on_game_started() -> void:
-	self.velocity.y = 1.5 * jump_velocity  # so that first jump is accounted for
+	self.velocity.y = 1.8 * jump_velocity  # so that first jump is accounted for
 	game_start = true
 
 

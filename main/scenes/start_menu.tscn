@@ -76,5 +76,7 @@ text = ">"
 
 [connection signal="pressed" from="GridContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/PlayerButtonLeft" to="." method="_on_player_button_left_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonUp" to="." method="_on_color_button_up_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonDown" to="." method="_on_color_button_down_pressed"]
+[connection signal="pressed" from="HBoxContainer/PlayerButtonRight" to="." method="_on_player_button_right_pressed"]

@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @onready var player_collision : CollisionShape2D = $PlayerCollision
 @onready var player_sprite : Sprite2D = $PlayerSprite
-@onready var player_anim_tree : AnimationTree = $PlayerAnimationTree
+@onready var player_anim : AnimationPlayer = $PlayerAnimation
 
 signal death
 signal jump
@@ -16,6 +16,11 @@ var has_control : bool = true
 
 
 func _ready() -> void:
+	var textures = [
+		preload("res://assets/images/player_1.png"),
+		preload("res://assets/images/player_2.png"),
+	]
+	player_sprite.texture = textures[Global.current_sprite]
 	player_sprite.self_modulate = Global.player_colors[Global.current_color]
 
 

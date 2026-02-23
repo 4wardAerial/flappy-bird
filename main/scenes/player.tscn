@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bw15a458b6s7v" path="res://main/scripts/player.gd" id="1_vq0uc"]
 [ext_resource type="Shader" uid="uid://o4ufwfvymjxf" path="res://assets/shaders/player.gdshader" id="2_1vjs0"]
-[ext_resource type="Texture2D" uid="uid://xn4bjiuwxtp1" path="res://assets/images/player.png" id="3_1vjs0"]
+[ext_resource type="Texture2D" uid="uid://63xvyygxo8t3" path="res://assets/images/player_1.png" id="3_1vjs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vjs0"]
 radius = 45.0
@@ -23,7 +23,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [Vector2i(0, 0)]
+"values": [Vector2i(0, 3)]
 }
 
 [sub_resource type="Animation" id="Animation_mnhwg"]
@@ -109,12 +109,13 @@ advance_mode = 2
 advance_expression = "has_control == false"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ty0pb"]
+states/Start/position = Vector2(93, 137)
 states/death/node = SubResource("AnimationNodeAnimation_o0rtv")
 states/death/position = Vector2(602, 83)
 states/fly/node = SubResource("AnimationNodeAnimation_1vjs0")
-states/fly/position = Vector2(437, 45)
+states/fly/position = Vector2(480, 142)
 states/idle/node = SubResource("AnimationNodeAnimation_oo0cl")
-states/idle/position = Vector2(437, 165)
+states/idle/position = Vector2(313, 137)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o0rtv"), "idle", "fly", SubResource("AnimationNodeStateMachineTransition_mnhwg"), "fly", "death", SubResource("AnimationNodeStateMachineTransition_ty0pb")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq0uc"]
@@ -135,8 +136,8 @@ debug_color = Color(0.2216686, 0.6250055, 0.3892527, 0.41960785)
 material = SubResource("ShaderMaterial_oo0cl")
 scale = Vector2(4, 4)
 texture = ExtResource("3_1vjs0")
-hframes = 4
 vframes = 6
+frame = 3
 
 [node name="PlayerAnimation" type="AnimationPlayer" parent="." unique_id=2051905433]
 libraries/ = SubResource("AnimationLibrary_o0rtv")

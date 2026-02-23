@@ -62,6 +62,7 @@ scale = Vector2(9, 9)
 texture = ExtResource("2_h62y2")
 hframes = 4
 vframes = 6
+frame = 12
 
 [node name="ColorButtonDown" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1456001717]
 layout_mode = 2

@@ -5,9 +5,9 @@ var current_color : int = 0
 var current_sprite : int = 0
 
 var player_types : Dictionary[int, float] = {
-	0 : -100,
-	1 : -300,
-	2 : -500,
+	0 : -300,
+	1 : -175,
+	2 : -450,
 }
 
 var player_colors : Dictionary[int, Color] = {

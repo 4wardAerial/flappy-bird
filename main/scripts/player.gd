@@ -7,21 +7,23 @@ extends CharacterBody2D
 signal death
 signal jump
 
-const JUMP_VELOCITY : float = -300.0
 const ROTATION_VELOCITY : float = 0.5
 
 var game_start : bool = false
-var gravity := Vector2(0, 980)
 var has_control : bool = true
+var gravity := Vector2(0, 980)
+var jump_velocity : float = -300.0
 
 
 func _ready() -> void:
 	var textures = [
 		preload("res://assets/images/player_1.png"),
 		preload("res://assets/images/player_2.png"),
+		preload("res://assets/images/player_3.png"),
 	]
 	player_sprite.texture = textures[Global.current_sprite]
 	player_sprite.self_modulate = Global.player_colors[Global.current_color]
+	jump_velocity = Global.player_types[Global.current_sprite]
 
 
 func _physics_process(delta : float) -> void:
@@ -32,7 +34,7 @@ func _physics_process(delta : float) -> void:
 		
 			if Input.is_action_just_pressed("key_space"):
 				self.rotation = lerp_angle(-PI/10, self.rotation, 0.1)  # resets sprite rotation when jumping
-				self.velocity.y = JUMP_VELOCITY
+				self.velocity.y = jump_velocity
 				emit_signal("jump")
 	else:
 		self.velocity += gravity * delta  # continues falling
@@ -47,12 +49,12 @@ func lost_game() -> void:
 	emit_signal("death")
 	flash_effect()
 	# randonly launches the player in a parabola
-	self.velocity.y = JUMP_VELOCITY * RandomNumberGenerator.new().randf_range(1.0, 2.0)
+	self.velocity.y = jump_velocity * RandomNumberGenerator.new().randf_range(1.0, 2.0)
 	self.velocity.x = 100 * RandomNumberGenerator.new().randf_range(-1, 1)
  
 
 func _on_game_started() -> void:
-	self.velocity.y = 2 * JUMP_VELOCITY  # so that first jump is accounted for
+	self.velocity.y = 1.5 * jump_velocity  # so that first jump is accounted for
 	game_start = true
 
 

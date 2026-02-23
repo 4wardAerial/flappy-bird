@@ -27,9 +27,9 @@ func _on_color_button_down_pressed() -> void:
 
 func _on_player_button_right_pressed() -> void:
 	x_frame = posmod(x_frame + 1, 4)
-	player_sprite.frame_coords = Vector2i(x_frame, 0)
+	player_sprite.frame_coords = Vector2i(x_frame, 3)
 
 
 func _on_player_button_left_pressed() -> void:
 	x_frame = posmod(x_frame - 1, 4)
-	player_sprite.frame_coords = Vector2i(x_frame, 0)
+	player_sprite.frame_coords = Vector2i(x_frame, 3)

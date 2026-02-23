@@ -63,10 +63,10 @@ debug_color = Color(0.82229614, 0.38410047, 0.3186671, 0.41960785)
 script = ExtResource("4_oanfa")
 
 [node name="Player" parent="." unique_id=1478665772 instance=ExtResource("1_612r5")]
-position = Vector2(117, 240)
+position = Vector2(117, 362)
 
 [node name="PipeStart" type="Sprite2D" parent="." unique_id=74601057]
-position = Vector2(125, 444)
+position = Vector2(125, 566)
 scale = Vector2(4, 4)
 texture = ExtResource("3_hrike")
 

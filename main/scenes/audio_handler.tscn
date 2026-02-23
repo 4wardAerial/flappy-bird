@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bwu83adqoxcos"]
+
+[ext_resource type="Script" uid="uid://b1khs51sm75u3" path="res://main/scripts/audio_handler.gd" id="1_n5fjr"]
+[ext_resource type="AudioStream" uid="uid://c8fpn73grjk7p" path="res://assets/sounds/game_music.wav" id="2_q8ph1"]
+[ext_resource type="AudioStream" uid="uid://bcsko81vqj7cn" path="res://assets/sounds/birds.wav" id="3_fpyub"]
+[ext_resource type="AudioStream" uid="uid://dvpovnrptcenh" path="res://assets/sounds/jump.wav" id="3_q8ph1"]
+[ext_resource type="AudioStream" uid="uid://b8ynq7jmxy0fv" path="res://assets/sounds/hit.wav" id="5_68ow8"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_q8ph1"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("3_q8ph1")
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_68ow8"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("5_68ow8")
+
+[node name="AudioHandler" type="Node" unique_id=2093039670]
+script = ExtResource("1_n5fjr")
+
+[node name="Music" type="Node" parent="." unique_id=555469555]
+
+[node name="GameMusic" type="AudioStreamPlayer" parent="Music" unique_id=128080791]
+process_mode = 3
+stream = ExtResource("2_q8ph1")
+
+[node name="Birds" type="AudioStreamPlayer" parent="Music" unique_id=254507429]
+stream = ExtResource("3_fpyub")
+autoplay = true
+
+[node name="SFX" type="Node" parent="." unique_id=539155464]
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="SFX" unique_id=377796171]
+stream = SubResource("AudioStreamRandomizer_q8ph1")
+
+[node name="HitSFX" type="AudioStreamPlayer" parent="SFX" unique_id=1956784589]
+stream = SubResource("AudioStreamRandomizer_68ow8")

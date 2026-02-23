@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://doa8kyxtgr7rs"]
+
+[ext_resource type="Texture2D" uid="uid://bff6us8i2u5k5" path="res://assets/images/icon.svg" id="1_5bi3x"]
+[ext_resource type="Script" uid="uid://36lfnnt68lgl" path="res://main/scripts/pipe.gd" id="1_vjgfa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_84vtl"]
+size = Vector2(54, 128)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_84vtl"]
+b = Vector2(0, 14.568346)
+
+[node name="Pipe" type="Node2D" unique_id=1310120658]
+script = ExtResource("1_vjgfa")
+
+[node name="PipeUp" type="Area2D" parent="." unique_id=1418539373]
+position = Vector2(0, -241)
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeUp" unique_id=841998172]
+position = Vector2(2.682209e-07, 0)
+scale = Vector2(0.42252943, 3.7526681)
+texture = ExtResource("1_5bi3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeUp" unique_id=1014316424]
+scale = Vector2(1, 3.7599998)
+shape = SubResource("RectangleShape2D_84vtl")
+debug_color = Color(0.82229614, 0.38410047, 0.3186671, 0.41960785)
+
+[node name="PipeDown" type="Area2D" parent="." unique_id=49522780]
+position = Vector2(0, 241)
+
+[node name="Sprite2D" type="Sprite2D" parent="PipeDown" unique_id=976580651]
+position = Vector2(2.682209e-07, 0)
+rotation = 3.1415927
+scale = Vector2(0.42252943, 3.7526681)
+texture = ExtResource("1_5bi3x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PipeDown" unique_id=1112979322]
+scale = Vector2(1, 3.7599998)
+shape = SubResource("RectangleShape2D_84vtl")
+debug_color = Color(0.82229614, 0.38410047, 0.3186671, 0.41960785)
+
+[node name="Score" type="Area2D" parent="." unique_id=104913842]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Score" unique_id=940501914]
+scale = Vector2(1, 44.48)
+shape = SubResource("SegmentShape2D_84vtl")
+debug_color = Color(1, 1, 1, 1)
+
+[connection signal="area_exited" from="Score" to="." method="_on_score_area_exited"]

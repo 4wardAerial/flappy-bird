@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://djfjhtqfr1mop"]
+
+[ext_resource type="Script" uid="uid://jy833v5ndc58" path="res://main/scripts/game.gd" id="1_174f0"]
+[ext_resource type="PackedScene" uid="uid://iw0jdc88e8ul" path="res://main/scenes/player.tscn" id="1_612r5"]
+[ext_resource type="PackedScene" uid="uid://dl1hpsuq4pva4" path="res://main/scenes/background.tscn" id="2_vu1ds"]
+[ext_resource type="Texture2D" uid="uid://c88865ax6b2nk" path="res://assets/images/pipe_start.png" id="3_hrike"]
+[ext_resource type="Script" uid="uid://mj501463ffy3" path="res://main/scripts/pipe_timer.gd" id="4_oanfa"]
+[ext_resource type="PackedScene" uid="uid://d4el22qw0lx06" path="res://main/scenes/hud.tscn" id="5_fj7bg"]
+[ext_resource type="PackedScene" uid="uid://bwu83adqoxcos" path="res://main/scenes/audio_handler.tscn" id="6_vu1ds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_612r5"]
+size = Vector2(22.109825, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oanfa"]
+size = Vector2(22.109825, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj7bg"]
+size = Vector2(22.109825, 51)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu1ds"]
+size = Vector2(22.109825, 51)
+
+[node name="Game" type="Node2D" unique_id=1198663840]
+script = ExtResource("1_174f0")
+
+[node name="Background" parent="." unique_id=1252940620 instance=ExtResource("2_vu1ds")]
+
+[node name="PipeHandler" type="Node2D" parent="." unique_id=243774101]
+
+[node name="Borders" type="Node2D" parent="." unique_id=885299457]
+
+[node name="Floor" type="StaticBody2D" parent="Borders" unique_id=1456464137]
+position = Vector2(153, 663)
+
+[node name="FloorCollision" type="CollisionShape2D" parent="Borders/Floor" unique_id=105770826]
+scale = Vector2(13.84, 1)
+shape = SubResource("RectangleShape2D_612r5")
+
+[node name="FloorArea" type="Area2D" parent="Borders/Floor" unique_id=1735640944]
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Borders/Floor/FloorArea" unique_id=1657788227]
+scale = Vector2(13.84, 1)
+shape = SubResource("RectangleShape2D_oanfa")
+debug_color = Color(0.82229614, 0.38410047, 0.3186671, 0.41960785)
+
+[node name="Ceiling" type="StaticBody2D" parent="Borders" unique_id=1577060255]
+position = Vector2(153, -44)
+scale = Vector2(1.0000001, 1)
+
+[node name="CeilingCollision" type="CollisionShape2D" parent="Borders/Ceiling" unique_id=1365107921]
+scale = Vector2(13.84, 1)
+shape = SubResource("RectangleShape2D_fj7bg")
+
+[node name="CeilingArea" type="Area2D" parent="Borders/Ceiling" unique_id=1662855934]
+scale = Vector2(1.0000001, 1)
+
+[node name="AreaCollision" type="CollisionShape2D" parent="Borders/Ceiling/CeilingArea" unique_id=1968872528]
+scale = Vector2(13.839999, 1)
+shape = SubResource("RectangleShape2D_vu1ds")
+debug_color = Color(0.82229614, 0.38410047, 0.3186671, 0.41960785)
+
+[node name="PipeTimer" type="Timer" parent="." unique_id=1999198519]
+script = ExtResource("4_oanfa")
+
+[node name="Player" parent="." unique_id=1478665772 instance=ExtResource("1_612r5")]
+position = Vector2(117, 240)
+
+[node name="PipeStart" type="Sprite2D" parent="." unique_id=74601057]
+position = Vector2(125, 444)
+scale = Vector2(4, 4)
+texture = ExtResource("3_hrike")
+
+[node name="HUD" parent="." unique_id=1632460914 instance=ExtResource("5_fj7bg")]
+metadata/_edit_lock_ = true
+
+[node name="AudioHandler" parent="." unique_id=2093039670 instance=ExtResource("6_vu1ds")]
+
+[connection signal="ended" from="." to="Background" method="_on_game_ended"]
+[connection signal="ended" from="." to="HUD" method="_on_game_ended"]
+[connection signal="ended" from="." to="AudioHandler" method="_on_game_ended"]
+[connection signal="paused" from="." to="HUD" method="_on_game_paused"]
+[connection signal="paused" from="." to="AudioHandler" method="_on_game_paused"]
+[connection signal="started" from="." to="Background" method="_on_game_started"]
+[connection signal="started" from="." to="PipeTimer" method="_on_game_started"]
+[connection signal="started" from="." to="Player" method="_on_game_started"]
+[connection signal="started" from="." to="HUD" method="_on_game_started"]
+[connection signal="started" from="." to="AudioHandler" method="_on_game_started"]
+[connection signal="timeout" from="PipeTimer" to="." method="_on_pipe_timer_timeout"]
+[connection signal="death" from="Player" to="." method="_on_player_death"]
+[connection signal="death" from="Player" to="PipeTimer" method="_on_player_death"]
+[connection signal="jump" from="Player" to="AudioHandler" method="_on_player_jump"]
+[connection signal="resumed" from="HUD" to="AudioHandler" method="_on_hud_resumed"]

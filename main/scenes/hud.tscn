@@ -1,0 +1,107 @@
+[gd_scene format=3 uid="uid://d4el22qw0lx06"]
+
+[ext_resource type="Script" uid="uid://cvc4nd2m2kw3q" path="res://main/scripts/hud.gd" id="1_fqxe0"]
+[ext_resource type="Texture2D" uid="uid://bff6us8i2u5k5" path="res://assets/images/icon.svg" id="2_xg5ji"]
+
+[node name="HUD" type="Control" unique_id=1632460914]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fqxe0")
+
+[node name="GrayTint" type="Sprite2D" parent="." unique_id=1883996477]
+visible = false
+self_modulate = Color(0, 0, 0, 0.24705882)
+position = Vector2(579.00006, 322)
+scale = Vector2(10.0859375, 6.7734323)
+texture = ExtResource("2_xg5ji")
+
+[node name="ScoreHUD" type="MarginContainer" parent="." unique_id=713055183]
+layout_mode = 1
+offset_right = 132.0
+offset_bottom = 60.0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="ScoreLabel" type="Label" parent="ScoreHUD" unique_id=521208252]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 25
+text = "SCORE: 0"
+
+[node name="CenterHUD" type="CenterContainer" parent="." unique_id=1419277847]
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterHUD" unique_id=984564046]
+layout_mode = 2
+
+[node name="CenterLabel" type="Label" parent="CenterHUD/VBoxContainer" unique_id=1069779853]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Press SPACE to jump!"
+horizontal_alignment = 1
+
+[node name="EndMenu" type="HBoxContainer" parent="CenterHUD/VBoxContainer" unique_id=828473841]
+visible = false
+layout_mode = 2
+
+[node name="RestartButton" type="Button" parent="CenterHUD/VBoxContainer/EndMenu" unique_id=207943974]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "RESTART GAME"
+
+[node name="StartButton" type="Button" parent="CenterHUD/VBoxContainer/EndMenu" unique_id=173190873]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "BACK TO MENU"
+
+[node name="QuitButton" type="Button" parent="CenterHUD/VBoxContainer/EndMenu" unique_id=1627075298]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "QUIT GAME"
+
+[node name="PauseHUD" type="CenterContainer" parent="." unique_id=387752155]
+process_mode = 2
+visible = false
+layout_mode = 1
+offset_right = 1152.0
+offset_bottom = 648.0
+metadata/_edit_lock_ = true
+
+[node name="PauseMenu" type="VBoxContainer" parent="PauseHUD" unique_id=186193783]
+layout_mode = 2
+
+[node name="ResumeButton" type="Button" parent="PauseHUD/PauseMenu" unique_id=1033535822]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "RESUME GAME"
+
+[node name="StartButton" type="Button" parent="PauseHUD/PauseMenu" unique_id=1681987391]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "BACK TO MENU"
+
+[node name="QuitButton" type="Button" parent="PauseHUD/PauseMenu" unique_id=1398870985]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "QUIT GAME"
+
+[connection signal="pressed" from="CenterHUD/VBoxContainer/EndMenu/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="CenterHUD/VBoxContainer/EndMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterHUD/VBoxContainer/EndMenu/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="PauseHUD/PauseMenu/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="PauseHUD/PauseMenu/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="PauseHUD/PauseMenu/QuitButton" to="." method="_on_quit_button_pressed"]

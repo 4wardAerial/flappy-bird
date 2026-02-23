@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://e5v2c4ydb5mn"]
+
+[ext_resource type="Script" uid="uid://cp2k3c8gcs73y" path="res://main/scripts/start_menu.gd" id="1_f1jtg"]
+[ext_resource type="Texture2D" uid="uid://xn4bjiuwxtp1" path="res://assets/images/player.png" id="2_h62y2"]
+
+[node name="StartMenu" type="Control" unique_id=946518447]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 773.0
+offset_top = 455.0
+offset_right = 813.0
+offset_bottom = 495.0
+script = ExtResource("1_f1jtg")
+
+[node name="GridContainer" type="VBoxContainer" parent="." unique_id=1034850793]
+layout_mode = 0
+offset_right = 240.0
+offset_bottom = 101.0
+
+[node name="StartButton" type="Button" parent="GridContainer" unique_id=1725851442]
+layout_mode = 2
+text = "START GAME"
+
+[node name="OptionsButton" type="Button" parent="GridContainer" unique_id=1271252247]
+visible = false
+layout_mode = 2
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="GridContainer" unique_id=416778798]
+layout_mode = 2
+text = "QUIT"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=931347424]
+layout_mode = 0
+offset_left = -691.0
+offset_top = -369.0
+offset_right = -203.0
+offset_bottom = -10.0
+
+[node name="PlayerButtonLeft" type="Button" parent="HBoxContainer" unique_id=659267963]
+layout_mode = 2
+size_flags_horizontal = 2
+text = "<"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=939254710]
+layout_mode = 2
+size_flags_horizontal = 6
+
+[node name="ColorButtonUp" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1158940482]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 2
+text = "Ʌ"
+
+[node name="PlayerContainer" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=862846445]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="PlayerSprite" type="Sprite2D" parent="HBoxContainer/VBoxContainer/PlayerContainer" unique_id=1588125612]
+scale = Vector2(9, 9)
+texture = ExtResource("2_h62y2")
+hframes = 4
+vframes = 6
+
+[node name="ColorButtonDown" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1456001717]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "V"
+
+[node name="PlayerButtonRight" type="Button" parent="HBoxContainer" unique_id=1001132122]
+layout_mode = 2
+size_flags_horizontal = 10
+text = ">"
+
+[connection signal="pressed" from="GridContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonUp" to="." method="_on_color_button_up_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonDown" to="." method="_on_color_button_down_pressed"]

@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://dl1hpsuq4pva4"]
+
+[ext_resource type="Script" uid="uid://cakysvtcktdro" path="res://main/scripts/background.gd" id="1_il8ih"]
+[ext_resource type="Texture2D" uid="uid://b3gngdlqukj71" path="res://assets/images/mountain_1.png" id="2_n67lc"]
+[ext_resource type="Texture2D" uid="uid://dy66rxgcb14fl" path="res://assets/images/sky.png" id="2_vtlrl"]
+[ext_resource type="Texture2D" uid="uid://b7l45j0sw8u3m" path="res://assets/images/forest_1.png" id="4_n67lc"]
+[ext_resource type="Texture2D" uid="uid://dme7dv8nut1j6" path="res://assets/images/mountain_2.png" id="4_rcgk8"]
+[ext_resource type="Texture2D" uid="uid://8ykmq7ly1qt5" path="res://assets/images/forest_2.png" id="4_w2evw"]
+[ext_resource type="Texture2D" uid="uid://b3xqi3kgbp3s4" path="res://assets/images/big_cloud_1.png" id="5_ydxlb"]
+[ext_resource type="Texture2D" uid="uid://c3011vfqb168e" path="res://assets/images/forest_4.png" id="6_1kka7"]
+[ext_resource type="Texture2D" uid="uid://d1eswgde1epcx" path="res://assets/images/cloud_1.png" id="6_ibpje"]
+[ext_resource type="Texture2D" uid="uid://oj6cyvfsl7mq" path="res://assets/images/cloud_2.png" id="7_ibpje"]
+[ext_resource type="Texture2D" uid="uid://bhv2nkmygorcc" path="res://assets/images/forest_3.png" id="7_poudp"]
+[ext_resource type="Texture2D" uid="uid://bsvmwna4akqod" path="res://assets/images/cloud_3.png" id="8_udn85"]
+[ext_resource type="Texture2D" uid="uid://sb75ocf0i0cl" path="res://assets/images/big_cloud_2.png" id="10_x4vba"]
+
+[node name="Background" type="Node2D" unique_id=1252940620]
+script = ExtResource("1_il8ih")
+
+[node name="Sky" type="Sprite2D" parent="." unique_id=1257518721]
+position = Vector2(578, 327)
+texture = ExtResource("2_vtlrl")
+
+[node name="CloudsBack" type="Node2D" parent="." unique_id=1244534067]
+
+[node name="BigCloud1" type="Parallax2D" parent="CloudsBack" unique_id=1904119849]
+repeat_size = Vector2(1150, 0)
+ignore_camera_scroll = true
+
+[node name="BigCloud1Sprite" type="Sprite2D" parent="CloudsBack/BigCloud1" unique_id=757037248]
+position = Vector2(742, 204)
+texture = ExtResource("5_ydxlb")
+
+[node name="Mountains" type="Node2D" parent="." unique_id=1528378156]
+position = Vector2(578, 327)
+
+[node name="Mountain1" type="Parallax2D" parent="Mountains" unique_id=2125168645]
+scroll_offset = Vector2(0, 8)
+repeat_size = Vector2(1200, 0)
+
+[node name="Mountain1Sprite" type="Sprite2D" parent="Mountains/Mountain1" unique_id=1032818081]
+position = Vector2(-421, 143)
+texture = ExtResource("4_rcgk8")
+
+[node name="Mountain2" type="Parallax2D" parent="Mountains" unique_id=1801402066]
+scroll_offset = Vector2(1, 0)
+repeat_size = Vector2(1200, 0)
+ignore_camera_scroll = true
+
+[node name="Mountain2Sprite" type="Sprite2D" parent="Mountains/Mountain2" unique_id=1647310625]
+position = Vector2(172, 55)
+texture = ExtResource("2_n67lc")
+
+[node name="Forest" type="Node2D" parent="." unique_id=1222737835]
+
+[node name="Forest1" type="Parallax2D" parent="Forest" unique_id=1555361396]
+repeat_size = Vector2(1300, 0)
+ignore_camera_scroll = true
+
+[node name="Forest1Sprite" type="Sprite2D" parent="Forest/Forest1" unique_id=917256578]
+position = Vector2(276, 576)
+texture = ExtResource("4_n67lc")
+
+[node name="Forest2" type="Parallax2D" parent="Forest" unique_id=1886730863]
+repeat_size = Vector2(1700, 0)
+
+[node name="Forest2Sprite" type="Sprite2D" parent="Forest/Forest2" unique_id=407325840]
+position = Vector2(1045, 600)
+texture = ExtResource("6_1kka7")
+
+[node name="Forest3" type="Parallax2D" parent="Forest" unique_id=127099809]
+repeat_size = Vector2(1200, 0)
+ignore_camera_scroll = true
+
+[node name="Forest3Sprite" type="Sprite2D" parent="Forest/Forest3" unique_id=210387411]
+position = Vector2(420, 592)
+texture = ExtResource("4_w2evw")
+
+[node name="Forest4" type="Parallax2D" parent="Forest" unique_id=2072638754]
+repeat_size = Vector2(1500, 0)
+ignore_camera_scroll = true
+
+[node name="Forest4Sprite" type="Sprite2D" parent="Forest/Forest4" unique_id=716899298]
+position = Vector2(885, 628)
+texture = ExtResource("7_poudp")
+
+[node name="CloudsFront" type="Node2D" parent="." unique_id=1305826347]
+
+[node name="BigCloud2" type="Parallax2D" parent="CloudsFront" unique_id=1554413033]
+repeat_size = Vector2(1150, 0)
+ignore_camera_scroll = true
+
+[node name="BigCloud2Sprite" type="Sprite2D" parent="CloudsFront/BigCloud2" unique_id=2108660899]
+position = Vector2(194, 149)
+texture = ExtResource("10_x4vba")
+
+[node name="Cloud1" type="Parallax2D" parent="CloudsFront" unique_id=27287995]
+repeat_size = Vector2(1500, 0)
+ignore_camera_scroll = true
+
+[node name="Cloud1Sprite" type="Sprite2D" parent="CloudsFront/Cloud1" unique_id=1989531115]
+position = Vector2(507, 253)
+texture = ExtResource("6_ibpje")
+
+[node name="Cloud2" type="Parallax2D" parent="CloudsFront" unique_id=560425574]
+repeat_size = Vector2(1300, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Cloud2Sprite" type="Sprite2D" parent="CloudsFront/Cloud2" unique_id=872338123]
+position = Vector2(380, 314)
+texture = ExtResource("7_ibpje")
+
+[node name="Cloud3" type="Parallax2D" parent="CloudsFront" unique_id=2140694723]
+repeat_size = Vector2(1200, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Cloud3Sprite" type="Sprite2D" parent="CloudsFront/Cloud3" unique_id=1844315171]
+position = Vector2(907, 396)
+texture = ExtResource("8_udn85")
+
+[node name="Shader" type="Node2D" parent="." unique_id=298235956]

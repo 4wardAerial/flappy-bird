@@ -10,7 +10,6 @@ radius = 45.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oo0cl"]
 shader = ExtResource("2_1vjs0")
 shader_parameter/flash = 0.0
-shader_parameter/onoff = 0
 
 [sub_resource type="Animation" id="Animation_1vjs0"]
 length = 0.001

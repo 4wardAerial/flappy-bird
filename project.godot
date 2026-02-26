@@ -28,6 +28,10 @@ Global="*uid://drxnlphx18pxd"
 
 window/stretch/mode="viewport"
 
+[dotnet]
+
+project/assembly_name="Flappy Bird"
+
 [input]
 
 key_space={

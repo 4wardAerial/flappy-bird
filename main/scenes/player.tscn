@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://63xvyygxo8t3" path="res://assets/images/player/player_1.png" id="3_1vjs0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1vjs0"]
-radius = 45.0
+radius = 34.0147
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oo0cl"]
 shader = ExtResource("2_1vjs0")
@@ -119,7 +119,7 @@ states/idle/position = Vector2(313, 137)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_o0rtv"), "idle", "fly", SubResource("AnimationNodeStateMachineTransition_mnhwg"), "fly", "death", SubResource("AnimationNodeStateMachineTransition_ty0pb")]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vq0uc"]
-radius = 43.0
+radius = 33.01515
 
 [node name="Player" type="CharacterBody2D" unique_id=1478665772]
 script = ExtResource("1_vq0uc")

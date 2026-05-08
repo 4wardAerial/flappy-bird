@@ -17,22 +17,22 @@ script = ExtResource("1_f1jtg")
 
 [node name="Scores" type="VBoxContainer" parent="." unique_id=967585890]
 layout_mode = 0
-offset_left = -132.0
-offset_top = -338.0
-offset_right = 320.0
-offset_bottom = -65.0
+offset_left = -175.0
+offset_top = -370.0
+offset_right = 350.0
+offset_bottom = -97.0
 
 [node name="HighScore" type="VBoxContainer" parent="Scores" unique_id=678796865]
 layout_mode = 2
 
 [node name="ValueLabel" type="Label" parent="Scores/HighScore" unique_id=1190808279]
 layout_mode = 2
-text = "HIGH SCORE: 0"
+text = "HIGH SCORE: 171"
 label_settings = SubResource("LabelSettings_h62y2")
 
 [node name="NameLabel" type="Label" parent="Scores/HighScore" unique_id=499550362]
 layout_mode = 2
-text = "by Player 1"
+text = "by Luc"
 
 [node name="RunnerUps" type="VBoxContainer" parent="Scores" unique_id=1455947521]
 layout_mode = 2
@@ -40,6 +40,7 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Scores/RunnerUps" unique_id=1425109274]
 layout_mode = 2
 text = "Followed by:"
+horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="Scores/RunnerUps" unique_id=469318962]
 layout_mode = 2
@@ -48,11 +49,14 @@ Player 3, with 0
 Player 4, with 0
 Player 5, with 0
 Player 6, with 0"
+horizontal_alignment = 1
 
 [node name="Options" type="VBoxContainer" parent="." unique_id=1917803299]
 layout_mode = 0
-offset_right = 240.0
-offset_bottom = 101.0
+offset_left = -29.0
+offset_top = -19.0
+offset_right = 211.0
+offset_bottom = 82.0
 
 [node name="StartButton" type="Button" parent="Options" unique_id=1725851442]
 layout_mode = 2
@@ -69,10 +73,10 @@ text = "QUIT"
 
 [node name="Birds" type="HBoxContainer" parent="." unique_id=931347424]
 layout_mode = 0
-offset_left = -691.0
-offset_top = -369.0
-offset_right = -203.0
-offset_bottom = -10.0
+offset_left = -722.0
+offset_top = -330.0
+offset_right = -234.0
+offset_bottom = 29.0
 
 [node name="PlayerButtonLeft" type="Button" parent="Birds" unique_id=659267963]
 layout_mode = 2

@@ -1,6 +1,6 @@
 extends Control
 
-@onready var player_sprite : Sprite2D = $HBoxContainer/VBoxContainer/PlayerContainer/PlayerSprite
+@onready var player_sprite : Sprite2D = $Birds/VBoxContainer/PlayerContainer/PlayerSprite
 @onready var color : int = Global.current_color
 @onready var sprite_frame : int = Global.current_sprite
 

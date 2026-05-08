@@ -4,6 +4,7 @@ extends Control
 @onready var color : int = Global.current_color
 @onready var sprite_frame : int = Global.current_sprite
 
+
 func _ready() -> void:
 	player_sprite.frame_coords = Vector2i(sprite_frame, 4)
 	player_sprite.self_modulate = Global.player_colors[color]	

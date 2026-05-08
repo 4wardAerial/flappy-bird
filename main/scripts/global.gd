@@ -11,6 +11,7 @@ var player_types : Dictionary[int, float] = {
 	2 : -450,
 }
 
+
 var player_colors : Dictionary[int, Color] = {
 	0 : Color(1.0, 1.0, 1.0, 1.0),
 	1 : Color(0.0, 0.0, 1.0, 1.0),

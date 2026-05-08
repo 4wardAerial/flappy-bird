@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cp2k3c8gcs73y" path="res://main/scripts/start_menu.gd" id="1_f1jtg"]
 [ext_resource type="Texture2D" uid="uid://xn4bjiuwxtp1" path="res://assets/images/player/player.png" id="2_h62y2"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_h62y2"]
+font_size = 64
+
 [node name="StartMenu" type="Control" unique_id=946518447]
 layout_mode = 3
 anchors_preset = 0
@@ -12,70 +15,104 @@ offset_right = 813.0
 offset_bottom = 495.0
 script = ExtResource("1_f1jtg")
 
-[node name="GridContainer" type="VBoxContainer" parent="." unique_id=1034850793]
+[node name="Scores" type="VBoxContainer" parent="." unique_id=967585890]
+layout_mode = 0
+offset_left = -132.0
+offset_top = -338.0
+offset_right = 320.0
+offset_bottom = -65.0
+
+[node name="HighScore" type="VBoxContainer" parent="Scores" unique_id=678796865]
+layout_mode = 2
+
+[node name="ValueLabel" type="Label" parent="Scores/HighScore" unique_id=1190808279]
+layout_mode = 2
+text = "HIGH SCORE: 0"
+label_settings = SubResource("LabelSettings_h62y2")
+
+[node name="NameLabel" type="Label" parent="Scores/HighScore" unique_id=499550362]
+layout_mode = 2
+text = "by Player 1"
+
+[node name="RunnerUps" type="VBoxContainer" parent="Scores" unique_id=1455947521]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Scores/RunnerUps" unique_id=1425109274]
+layout_mode = 2
+text = "Followed by:"
+
+[node name="Label2" type="Label" parent="Scores/RunnerUps" unique_id=469318962]
+layout_mode = 2
+text = "Player 2, with 0
+Player 3, with 0
+Player 4, with 0
+Player 5, with 0
+Player 6, with 0"
+
+[node name="Options" type="VBoxContainer" parent="." unique_id=1917803299]
 layout_mode = 0
 offset_right = 240.0
 offset_bottom = 101.0
 
-[node name="StartButton" type="Button" parent="GridContainer" unique_id=1725851442]
+[node name="StartButton" type="Button" parent="Options" unique_id=1725851442]
 layout_mode = 2
 text = "START GAME"
 
-[node name="OptionsButton" type="Button" parent="GridContainer" unique_id=1271252247]
+[node name="OptionsButton" type="Button" parent="Options" unique_id=1271252247]
 visible = false
 layout_mode = 2
 text = "OPTIONS"
 
-[node name="QuitButton" type="Button" parent="GridContainer" unique_id=416778798]
+[node name="QuitButton" type="Button" parent="Options" unique_id=416778798]
 layout_mode = 2
 text = "QUIT"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=931347424]
+[node name="Birds" type="HBoxContainer" parent="." unique_id=931347424]
 layout_mode = 0
 offset_left = -691.0
 offset_top = -369.0
 offset_right = -203.0
 offset_bottom = -10.0
 
-[node name="PlayerButtonLeft" type="Button" parent="HBoxContainer" unique_id=659267963]
+[node name="PlayerButtonLeft" type="Button" parent="Birds" unique_id=659267963]
 layout_mode = 2
 size_flags_horizontal = 2
 text = "<"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=939254710]
+[node name="VBoxContainer" type="VBoxContainer" parent="Birds" unique_id=939254710]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ColorButtonUp" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1158940482]
+[node name="ColorButtonUp" type="Button" parent="Birds/VBoxContainer" unique_id=1158940482]
 layout_mode = 2
 size_flags_vertical = 2
 text = "Ʌ"
 
-[node name="PlayerContainer" type="Control" parent="HBoxContainer/VBoxContainer" unique_id=862846445]
+[node name="PlayerContainer" type="Control" parent="Birds/VBoxContainer" unique_id=862846445]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="PlayerSprite" type="Sprite2D" parent="HBoxContainer/VBoxContainer/PlayerContainer" unique_id=1588125612]
+[node name="PlayerSprite" type="Sprite2D" parent="Birds/VBoxContainer/PlayerContainer" unique_id=1588125612]
 scale = Vector2(9, 9)
 texture = ExtResource("2_h62y2")
 hframes = 4
 vframes = 6
 frame = 12
 
-[node name="ColorButtonDown" type="Button" parent="HBoxContainer/VBoxContainer" unique_id=1456001717]
+[node name="ColorButtonDown" type="Button" parent="Birds/VBoxContainer" unique_id=1456001717]
 layout_mode = 2
 size_flags_vertical = 10
 text = "V"
 
-[node name="PlayerButtonRight" type="Button" parent="HBoxContainer" unique_id=1001132122]
+[node name="PlayerButtonRight" type="Button" parent="Birds" unique_id=1001132122]
 layout_mode = 2
 size_flags_horizontal = 10
 text = ">"
 
-[connection signal="pressed" from="GridContainer/StartButton" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="GridContainer/QuitButton" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="HBoxContainer/PlayerButtonLeft" to="." method="_on_player_button_left_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonUp" to="." method="_on_color_button_up_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/ColorButtonDown" to="." method="_on_color_button_down_pressed"]
-[connection signal="pressed" from="HBoxContainer/PlayerButtonRight" to="." method="_on_player_button_right_pressed"]
+[connection signal="pressed" from="Options/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Options/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="Birds/PlayerButtonLeft" to="." method="_on_player_button_left_pressed"]
+[connection signal="pressed" from="Birds/VBoxContainer/ColorButtonUp" to="." method="_on_color_button_up_pressed"]
+[connection signal="pressed" from="Birds/VBoxContainer/ColorButtonDown" to="." method="_on_color_button_down_pressed"]
+[connection signal="pressed" from="Birds/PlayerButtonRight" to="." method="_on_player_button_right_pressed"]

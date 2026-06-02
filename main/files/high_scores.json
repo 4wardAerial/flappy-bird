@@ -1,0 +1,27 @@
+{
+	"1" : {
+		"name" : "Lucas",
+		"bird" : "0",
+		"score" : "163"
+	},
+	"2" : {
+		"name" : "Victor",
+		"bird" : "1",
+		"score" : "217"
+	},
+	"3" : {
+		"name" : "Teste",
+		"bird" : "2",
+		"score" : "10"
+	},
+	"4" : {
+		"name" : "Robo",
+		"bird" : "3",
+		"score" : "42"
+	},
+	"5" : {
+		"name" : "Teste 2",
+		"bird" : "0",
+		"score" : "21"
+	}
+}
